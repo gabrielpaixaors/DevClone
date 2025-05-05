@@ -1,0 +1,56 @@
+<div class="login-container">
+  <div class="login-card">
+    <!-- Logo clicável -->
+    <a routerLink="/" class="logo-link">
+      <img src="/assets/spotify-clone_white.png" alt="Logo" />
+    </a>
+
+    <h2>Entrar no Spotify</h2>
+
+    <!-- Botões sociais -->
+    <div class="social-buttons">
+      <button class="btn-social google">
+        <i class="fab fa-google"></i>
+        Continuar com o Google
+      </button>
+      <button class="btn-social facebook">
+        <i class="fab fa-facebook"></i>
+        Continuar com o Facebook
+      </button>
+      <button class="btn-social apple">
+        <i class="fab fa-apple"></i>
+        Continuar com a Apple
+      </button>
+      <button class="btn-social phone">
+        <i class="fas fa-phone"></i>
+        Continuar com um número de telefone
+      </button>
+    </div>
+
+    <hr />
+
+    <!-- login.component.html -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label for="username">E-mail ou nome de usuário</label>
+  <input
+    id="username"
+    type="text"
+    formControlName="username"
+    placeholder="Digite seu usuário ou e-mail"
+  />
+
+  <!-- NOVO campo de senha -->
+  <label for="password">Senha</label>
+  <input
+    id="password"
+    type="password"
+    formControlName="password"
+    placeholder="Digite sua senha"
+  />
+
+  <button type="submit" class="btn-primary" [disabled]="form.invalid">
+    Continuar
+  </button>
+</form>
+
+</div>

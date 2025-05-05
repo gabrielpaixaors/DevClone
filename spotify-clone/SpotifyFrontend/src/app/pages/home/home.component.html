@@ -1,0 +1,29 @@
+
+<section class="section">
+  <h3>Feito para você</h3>
+  <div class="carousel">
+    <div class="item" *ngFor="let item of recommendations">
+      <img [src]="item.img" alt="{{ item.title }}" />
+
+      <div class="play-overlay">
+        <button (click)="onPlay(item.title)">
+          <i class="fas fa-play"></i>
+        </button>
+      </div>
+
+      <p>{{ item.title }}</p>
+      <p class="subtitle">{{ item.sub }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section artists-section">
+  <h3>Artistas populares</h3>
+  <div class="artists-carousel">
+    <div class="artist-item" *ngFor="let art of popularArtists">
+      <img [src]="art.img" [alt]="art.name" />
+      <p>{{ art.name }}</p>
+      <small>Artista</small>
+    </div>
+  </div>
+</section>

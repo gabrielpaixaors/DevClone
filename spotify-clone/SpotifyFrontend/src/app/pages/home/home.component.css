@@ -1,0 +1,154 @@
+.hero { padding: 1rem; }
+.cards { display: flex; gap: 1rem; overflow-x: auto; }
+.card {
+  background: var(--surface);
+  padding: 0.5rem;
+  border-radius: 4px;
+  display: flex; align-items: center; gap: 0.5rem;
+  min-width: 10rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+.card img { width: 48px; height: 48px; border-radius: 4px; }
+.card span { color: var(--text); font-weight: bold; }
+
+.section { padding: 1rem; }
+.section h3 { color: var(--text); margin-bottom: 1rem; }
+
+/* Carrossel horizontal */
+.carousel {
+  display: flex;           
+  gap: 1rem;              
+  overflow-x: auto;        
+  padding-bottom: 1rem;    
+}
+/* Garante largura mínima e impede encolher dos cards */
+.carousel .item {
+  min-width: 12rem;        
+  flex-shrink: 0;         
+}
+
+.carousel::-webkit-scrollbar {
+  height: 6px;
+}
+.carousel::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
+}
+
+.carousel {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.2) transparent;
+}
+
+/* Item com overlay */
+.item {
+  position: relative;
+  background: var(--surface);
+  padding: 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.item:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+}
+
+.play-overlay {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.item:hover .play-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.play-overlay button {
+  background: var(--accent);
+  border: none;
+  border-radius: 50%;
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+.play-overlay button:hover {
+  transform: scale(1.1);
+}
+.play-overlay i {
+  color: var(--bg);
+  font-size: 1.5rem;
+}
+
+.item img { width: 100%; border-radius: 4px; }
+.item p { margin: 0; color: var(--text); }
+.subtitle { color: var(--text-secondary); font-size: 0.8rem; }
+
+
+/* Segunda section */
+
+.artists-section h3 {
+  margin-top: 2rem;
+  color: var(--text);
+}
+
+.artists-carousel {
+  display: flex;
+  gap: 1.5rem;          
+  overflow-x: auto;     
+  padding: 0.5rem 0 1rem;
+}
+
+.artists-carousel::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
+}
+
+
+.artists-carousel {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.2) transparent;
+}
+
+.artist-item {
+  flex: 0 0 auto;       
+  min-width: 8rem;      
+  text-align: center;
+}
+
+
+.artist-item img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+
+.artist-item p {
+  max-width: 120px;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0.25rem 0 0;
+}
+
+.artist-item small {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+

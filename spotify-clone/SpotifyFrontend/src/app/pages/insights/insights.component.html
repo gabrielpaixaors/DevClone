@@ -1,0 +1,29 @@
+<div class="insights-container">
+  <h2>Insights</h2>
+
+  <!-- Top 1 Playlist -->
+  <div class="top1-card" *ngIf="topPlaylist">
+    <p class="label">Mais ouvida</p>
+    <h3 class="playlist">{{ topPlaylist.name }}</h3>
+    <p class="count">{{ topPlaylist.count }} cliques</p>
+  </div>
+
+  <!-- Gráficos lado a lado -->
+  <div class="charts-row">
+    <div class="chart-card">
+      <canvas baseChart
+        [data]="pieData"
+        [options]="pieOptions"
+        chartType="pie">
+      </canvas>
+    </div>
+
+    <div class="chart-card">
+      <canvas baseChart
+        [data]="barData"
+        [options]="barOptions"
+        chartType="bar">
+      </canvas>
+    </div>
+  </div>
+</div>

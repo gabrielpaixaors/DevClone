@@ -1,0 +1,25 @@
+<aside class="sidebar">
+  <div class="logo">
+    <a routerLink="/" class="logo-link">
+      <img src="/assets/spotify-clone_green.png" alt="Logo" />
+    </a>
+  </div>
+
+  <nav>
+    <ul class="main-nav">
+      <li routerLink="/" routerLinkActive="active"><i class="fas fa-home"></i><span>Início</span></li>
+      <li routerLink="/search" routerLinkActive="active"><i class="fas fa-search"></i><span>Buscar</span></li>
+      <li routerLink="/library" routerLinkActive="active"><i class="fas fa-book"></i><span>Sua Biblioteca</span></li>
+      <li routerLink="/insights" routerLinkActive="active"><i class="fas fa-chart-bar"></i><span>Insights</span>
+      </li>
+      
+    </ul>
+    <hr />
+    <ul class="playlists">
+      <li *ngFor="let pl of sidebarPlaylists">
+        <img [src]="pl.img" [alt]="pl.name" class="pl-thumb" />
+        <span class="pl-name">{{ pl.name }}</span>
+      </li>
+    </ul>
+  </nav>
+</aside>
