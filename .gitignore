@@ -1,0 +1,32 @@
+# Node
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Angular build
+dist
+.angular
+
+# IDEs e editores
+.vscode
+.idea
+.suo
+.user
+.userosscache
+.sln.docstates
+
+# .NET
+bin
+obj
+.db
+.DB
+Migrations
+
+# Logs
+logs
+.log
+
+# Sistema
+.DS_Store
+Thumbs.db
